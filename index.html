@@ -423,14 +423,14 @@
         transform: rotate(180deg);
       }
       @media (max-width: 639px) {
-        .fee-nav-btn span.fee-label {
+        .fee-nav-btn span.fee-label,
+        span.reg-label {
           display: none;
         }
       }
       .fee-dropdown {
         position: absolute;
         top: calc(var(--nav-h) + 6px);
-        right: 0;
         background: var(--card);
         border: 1px solid var(--line2);
         border-radius: 16px;
@@ -441,16 +441,42 @@
         gap: 0.35rem;
         width: min(360px, 94vw);
         opacity: 0;
-        transform: translateY(-8px) scale(0.97);
         pointer-events: none;
         transition:
           opacity 0.22s,
           transform 0.22s;
         z-index: 850;
       }
+
+      /* Desktop */
+      @media (min-width: 768px) {
+        .fee-dropdown {
+          right: 0;
+          left: auto;
+          transform: translateY(-8px) scale(0.97);
+        }
+
+        .fee-dropdown.open {
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* Mobile (centered) */
+      @media (max-width: 767px) {
+        .fee-dropdown {
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%) translateY(-8px) scale(0.97);
+        }
+
+        .fee-dropdown.open {
+          transform: translateX(-50%) translateY(0) scale(1);
+        }
+      }
+
+      /* Shared open state */
       .fee-dropdown.open {
         opacity: 1;
-        transform: none;
         pointer-events: all;
       }
       .fee-dd-item {
@@ -4282,7 +4308,7 @@
               ><i class="fas fa-rocket"></i> Register Now</a
             >
             <a
-              href="https://wa.me/254103499060?text=Hello,%20I%20need%20help%20creating%20my%20starhela%20account."
+              href="https://wa.me/254725125473?text=Hello,%20I%20need%20help%20creating%20my%20starhela%20account."
               target="_blank"
               rel="noopener"
               class="secondary"
@@ -4381,7 +4407,7 @@
             ><i class="fas fa-lock"></i>&nbsp;Secure &amp; Confidential</span
           >
           <a
-            href="https://wa.me/254103499060?text=I+have+a+question+about+starhela+policies"
+            href="https://wa.me/254725125473?text=I+have+a+question+about+starhela+policies"
             target="_blank"
             rel="noopener"
             class="lm-foot-btn"
@@ -4407,7 +4433,7 @@
       </div>
     </div>
     <a
-      href="https://wa.me/254103499060"
+      href="https://wa.me/254725125473"
       class="float-wa"
       target="_blank"
       rel="noopener"
@@ -4471,7 +4497,8 @@
               href="javascript:void(0)"
               class="nav-cta register-link"
               data-url="https://starhela.com/register.php?ref=MillionaireMax"
-              ><i class="fas fa-user-plus"></i> Register</a
+              ><i class="fas fa-user-plus"></i>
+              <span class="reg-label"> Register</span></a
             >
             <button
               class="ham"
@@ -5366,7 +5393,7 @@
           </p>
           <div class="cl-cta-btns">
             <a
-              href="https://wa.me/254103499060?text=Hi%2C+I+am+a+client+looking+to+have+a+conversation+with+someone+from+Africa.+Please+help+me+get+started."
+              href="https://wa.me/254725125473?text=Hi%2C+I+am+a+client+looking+to+have+a+conversation+with+someone+from+Africa.+Please+help+me+get+started."
               target="_blank"
               rel="noopener"
               class="btn btn-wa btn-xl"
@@ -5780,7 +5807,7 @@
             ><i class="fas fa-rocket"></i> Start Chatting Now</a
           >
           <a
-            href="https://wa.me/254103499060?text=Hello,%20I%20have%20a%20question%20about%20starhela"
+            href="https://wa.me/254725125473?text=Hello,%20I%20have%20a%20question%20about%20starhela"
             class="btn btn-wa btn-xl"
             target="_blank"
             rel="noopener"
@@ -5821,10 +5848,10 @@
           <p class="footer-copy">
             Built with ❤️ by
             <a
-              href="https://wa.me/254707995729?text=Hi%20Besttech,%20I%20need%20a%20website."
+              href="https://wa.me/254707995729?text=Hi%20BESTTECH"
               target="_blank"
               rel="noopener"
-              >Besttech</a
+              >BESTTECH</a
             >
           </p>
         </div>
@@ -6367,13 +6394,6 @@
             });
             mobFeeList.appendChild(d);
           });
-          const more = document.createElement("a");
-          more.href = "#countries";
-          more.style.cssText =
-            "font-size:.72rem;color:var(--g);font-weight:700;padding:.3rem .5rem;display:block;text-align:center;margin-top:.2rem";
-          more.textContent = "View all countries →";
-          more.addEventListener("click", closeMob);
-          mobFeeList.appendChild(more);
         }
 
         function openFeeDD() {
