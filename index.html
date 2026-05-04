@@ -1774,127 +1774,6 @@
         text-decoration: underline;
         text-underline-offset: 3px;
       }
-
-      /* COUNTRIES */
-      .countries-sec {
-        background: var(--night3);
-      }
-      .countries-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.875rem;
-      }
-      @media (min-width: 480px) {
-        .countries-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-      @media (min-width: 768px) {
-        .countries-grid {
-          grid-template-columns: repeat(4, 1fr);
-        }
-      }
-      @media (min-width: 1100px) {
-        .countries-grid {
-          grid-template-columns: repeat(5, 1fr);
-        }
-      }
-      .cc {
-        border-radius: 14px;
-        overflow: hidden;
-        cursor: pointer;
-        height: 175px;
-        position: relative;
-        transition: all 0.28s var(--ease);
-        border: 2px solid transparent;
-      }
-      .cc:hover,
-      .cc.sel {
-        transform: translateY(-6px);
-        border-color: var(--g);
-        box-shadow:
-          0 0 0 1px rgba(155, 109, 255, 0.12),
-          var(--sh-card);
-      }
-      .cc-bg {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        transition: transform 0.5s var(--ease);
-      }
-      .cc:hover .cc-bg,
-      .cc.sel .cc-bg {
-        transform: scale(1.06);
-      }
-      .cc-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to top,
-          rgba(13, 10, 26, 0.92) 0%,
-          rgba(13, 10, 26, 0.3) 55%,
-          rgba(13, 10, 26, 0.05) 100%
-        );
-        transition: all 0.25s;
-      }
-      .cc.sel .cc-overlay {
-        background: linear-gradient(
-          to top,
-          rgba(60, 20, 120, 0.78) 0%,
-          rgba(40, 10, 80, 0.22) 55%,
-          transparent 100%
-        );
-      }
-      .cc-inner {
-        position: relative;
-        z-index: 2;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 0.875rem;
-      }
-      .cc-flag {
-        font-size: 1.6rem;
-        margin-bottom: 0.15rem;
-        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
-      }
-      .cc-name {
-        font-family: var(--fh);
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--white);
-        margin-bottom: 0.06rem;
-      }
-      .cc-fee {
-        font-family: var(--fm);
-        font-size: 0.52rem;
-        color: rgba(255, 255, 255, 0.6);
-      }
-      .cc-tick {
-        position: absolute;
-        top: 0.625rem;
-        right: 0.625rem;
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        display: grid;
-        place-items: center;
-        font-size: 0.52rem;
-        color: rgba(255, 255, 255, 0.5);
-        transition: all 0.2s;
-        backdrop-filter: blur(6px);
-      }
-      .cc:hover .cc-tick,
-      .cc.sel .cc-tick {
-        background: var(--g);
-        color: #fff;
-        border-color: var(--g);
-      }
-
       /* CLIENTS */
       .clients-sec {
         background: var(--night2);
@@ -4986,34 +4865,6 @@
       </div>
     </section>
 
-    <!-- COUNTRIES -->
-    <section class="countries-sec sec" id="countries">
-      <div class="wrap">
-        <div class="shead c fu">
-          <div class="pill">Your Country</div>
-          <h2 class="h-lg">
-            Select your country to <span class="g-text">see your offer</span>
-          </h2>
-          <p class="sub">
-            Each country has a localized registration fee. Tap yours to reveal
-            your deal.
-          </p>
-        </div>
-        <div class="countries-grid" id="countriesGrid"></div>
-        <p
-          style="
-            text-align: center;
-            font-family: var(--fm);
-            font-size: 0.63rem;
-            color: var(--t3);
-            margin-top: 1.125rem;
-          "
-        >
-          👆 Tap your country to reveal your offer
-        </p>
-      </div>
-    </section>
-
     <!-- EARN METHODS -->
     <section class="earn-sec sec" id="earn">
       <div class="wrap">
@@ -6033,9 +5884,9 @@
           {
             name: "Tanzania",
             flag: "🇹🇿",
-            old: "TZS 15,000",
+            old: "TZS 14,000",
             fee: "TZS 11,000",
-            save: "TZS 4,000",
+            save: "TZS 3,000",
             disc: "20%",
             pay: "M-Pesa Tanzania",
             urg: "⏳ Grab it before it's gone!",
@@ -6056,7 +5907,7 @@
             name: "Ghana",
             flag: "🇬🇭",
             old: "GH₵ 120",
-            fee: "GH₵ 96",
+            fee: "GH₵ 95",
             save: "GH₵ 14",
             disc: "20%",
             pay: "MTN MoMo",
